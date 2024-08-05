@@ -85,19 +85,20 @@ const items = [
   },
 ];
 
-function renderItems(itemList) {
-  const shopItemsContainer = document.querySelector('#shop-items');
-  const template = document.querySelector('#item-template');
+const shopItemsContainer = document.querySelector('#shop-items');
+const template = document.querySelector('#item-template');
+
+function renderItems(itemsList) {
 
   shopItemsContainer.innerHTML = ''; 
 
-  if (itemList.length === 0) {
+  if (itemsList.length === 0) {
       document.getElementById('nothing-found').style.display = 'block'; 
   } else {
       document.getElementById('nothing-found').style.display = 'none'; 
   }
 
-  itemList.forEach(item => { 
+  itemsList.forEach(item => { 
       const itemElement = template.content.cloneNode(true);
 
       itemElement.querySelector('img').src = item.img;
